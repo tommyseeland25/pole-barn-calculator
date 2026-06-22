@@ -5,6 +5,19 @@
     </head>
     <body>
         <h1> Pole Barn Calculator</h1>
+
+        <!-- type = "number" tells browser only accept numbers in that field
+         the div id = "results" is where JS will drop the output once it is wired
+         up. The button has an id so that JS can listen for clicks on it.  -->
+
+        <label>Width (ft): <input type = "number" id = "width"></label>
+        <label>Length (ft): <input type = "number" id="length"></label>
+        <label>Wall Height (ft): <input type = "number" id = "wallHeight"></label>
+
+        <button id = "calculatorBtn">Calculate</button>
+
+        <div id = "results"></div>
+
         <script src = "script.js"></script>
     </body>
 </html>
