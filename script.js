@@ -24,10 +24,16 @@ document.addEventListener("DOMContentLoaded", function() {
     const wallArea = 2 * (widthValue + lengthValue) * heightValue;
     console.log("Wall Area:", wallArea);
 
+    // total number of post needed math
+    const numPosts = ((((lengthValue / 8) + 1) * 2) + 
+                      (((widthValue / 8) - 1) * 2));
+    console.log("Number of Posts:", numPosts);
+
     // words presented to user
     document.getElementById("results").innerHTML = 
     "Floor Area: " + floorArea + " sq ft" +
-    "<br>Wall Area: " + wallArea + " sq ft";
+    "<br>Wall Area: " + wallArea + " sq ft" +
+    "<br>Number of Posts: " + numPosts;
 
   });
 });
