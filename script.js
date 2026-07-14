@@ -40,11 +40,21 @@ document.addEventListener("DOMContentLoaded", function() {
     const num_2x6x16_boards= Math.ceil(total_girt_length / 16);
     console.log("Girt Boards (2x6x16):", num_2x6x16_boards);
 
-    // Roof logic
+    // truss logic
     console.log("Roof Pitch", roofPtichValue);
     console.log("Truss Spacing", trussSpacingValue);
     const num_of_trusses = (lengthValue / trussSpacingValue) + 1;
-    //const rafter
+
+    // Roofing panel logic
+    const rise = (widthValue / 2) * (roofPtichValue / 12);
+    const rafter_length = Math.sqrt((widthValue / 2) ** 2 + rise ** 2);
+    const rafter_length_display = rafter_length.toFixed(2);
+
+    // for OSB 4x8 sheets, 8ft runs along the slope, 4ft runs along the length
+    const panels_per_row = Math.ceil(rafter_length / 8);  // how many sheets to cover the slope
+    const rows = Math.ceil(lengthValue / 4);               // how many columns along the length
+    const num_osb_panels = panels_per_row * rows * 2;          // × 2 for both sides of the roof    
+    
 
     // words presented to user
     document.getElementById("results").innerHTML = 
@@ -52,7 +62,9 @@ document.addEventListener("DOMContentLoaded", function() {
     "<br>Wall Area: " + wallArea + " sq ft" +
     "<br>Number of Posts: " + numPosts +
     "<br>Girt Boards (2x6x16): " + num_2x6x16_boards +
-    "<br>Number of Trusses: " + num_of_trusses;
+    "<br>Number of Trusses: " + num_of_trusses +
+    "<br>Rafter Length: " + rafter_length_display +
+    "<br>Number of OSB panels: " + num_osb_panels;
 
   });
 });
