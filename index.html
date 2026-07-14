@@ -2,24 +2,40 @@
 <html lang="en">
     <head>
         <title> Pole Barn Calculator</title>
+        <link rel="stylesheet" href="style.css">
+        <meta charset="UTF-8">
     </head>
     <body>
-        <h1> Pole Barn Calculator</h1>
+        <div class="card">
+            <h1>Pole Barn Calculator</h1>
 
-        <!-- type = "number" tells browser only accept numbers in that field
-         the div id = "results" is where JS will drop the output once it is wired
-         up. The button has an id so that JS can listen for clicks on it.  -->
+            <div class="field-grid">
+            <div class="field">
+                <label>Width (ft)</label>
+                <input type="number" id="width" placeholder="e.g. 24">
+            </div>
+            <div class="field">
+                <label>Length (ft)</label>
+                <input type="number" id="length" placeholder="e.g. 40">
+            </div>
+            <div class="field">
+                <label>Wall height (ft)</label>
+                <input type="number" id="height" placeholder="e.g. 10">
+            </div>
+            <div class="field">
+                <label>Roof pitch (x/12)</label>
+                <input type="number" id="roofPitch" placeholder="e.g. 4">
+            </div>
+            <div class="field">
+                <label>Truss spacing (ft)</label>
+                <input type="number" id="trussSpacing" placeholder="e.g. 2">
+            </div>
+            </div>
 
-        <label>Width (ft): <input type = "number" id = "width"></label>
-        <label>Length (ft): <input type = "number" id="length"></label>
-        <label>Wall Height (ft): <input type = "number" id = "height"></label>
-        <label>Roof Pitch (x/12): <input type = "number" id = "roofPitch"></label>
-        <label>Truss Spacing: <input type = "number" id = "trussSpacing"></label>
+            <button id="calculatorBtn">Calculate</button>
 
-        <button id = "calculatorBtn">Calculate</button>
-
-        <div id = "results"></div>
-
-        <script src = "script.js"></script>
+            <div id="results"></div>
+        </div>
+        <script src="script.js"></script>
     </body>
 </html>
